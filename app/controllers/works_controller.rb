@@ -12,6 +12,12 @@ class WorksController < ApplicationController
   def show
   end
 
+  # GET /works/1
+  # GET /works/1.json
+  def showboard
+    @works = Work.all
+  end
+
   # GET /works/new
   def new
     @work = Work.new

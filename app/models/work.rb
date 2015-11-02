@@ -1,3 +1,5 @@
 class Work < ActiveRecord::Base
-    has_one :person
+    belongs_to :person
+    has_one :stage
+    
 end

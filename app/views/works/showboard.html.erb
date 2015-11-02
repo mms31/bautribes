@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Works</h1>
+
+<table border=4>
+  
+    <% @works.each do |work| %>
+      <tr width=50>
+        <td><%= Person.find(work.person_id).name %>
+        <br><b>Stage:</b><br><%= Stage.find(work.stage_id).description %>
+        <br><b>Description:</b>
+        <br> <%= work.description %>
+        <br><b>Estimate: </b><%= work.estimate %>
+        <br><%= link_to 'Show', work %>
+        <br><%= link_to 'Edit', edit_work_path(work) %>
+        <br><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work', new_work_path %><br>
+<%= link_to 'Home', welcomes_url %>

@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
   resources :welcomes
-  resources :works
+  resources :works do 
+    member do
+      get 'showboard'
+    end
+  end
   resources :stages
   resources :people
   resources :people
   resources :works
   resources :people
+  
+  #resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
